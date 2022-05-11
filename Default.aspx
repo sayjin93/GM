@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,24 +24,37 @@
 
         <div class="container">
 
-            <!--Logo-->
-            <div class="logo">
-                <img src="Assets/Images/logo.svg" alt="General Motors Logo" />
-            </div>
-            <!--End Logo-->
+            <!--Header-->
+            <uc1:Header runat="server" ID="Header" />
+            <!--End Header-->
 
             <!--Card-->
             <div class="card">
+                <!--3 Main Tabs-->
                 <div class="tabs">
                     <div class="tab">
                         <label for="tab-1"><i class="fa-solid fa-table-columns"></i>Tab 1</label>
                         <input id="tab-1" name="tabs" type="radio" checked="checked" />
                         <div>
                             <div class="accordion">
-                                <input type="checkbox" name="check1" id="check1" checked />
+                                <input type="checkbox" name="check1" id="check1" checked="checked" />
                                 <label class="accordion-label" for="check1"><i class="fa-solid fa-border-top-left"></i>Group 1</label>
                                 <div class="accordion-content">
-                                    <p>Hey there, you are watching codiesbugs &#128522;</p>
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input id="username" type="text" name="username" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input id="password" type="password" name="password" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-remember">
+                                            <input type="checkbox" />Remember Me
+                                        </label>
+                                        <a class="form-recovery" href="#">Forgot Password?</a>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="accordion">
@@ -72,16 +90,19 @@
                         </div>
                     </div>
                 </div>
+                <!--End 3 Main Tabs-->
+
+                <!--Form Submit Button-->
+                <div class="form-group">
+                    <button type="submit" style="margin: -20px 20px 0;">Submit</button>
+                </div>
+                <!--End Form Submit Button-->
             </div>
             <!--End Card-->
 
-            <div class="footer">
-                <p>
-                    ©
-                    <script>document.write(new Date().getFullYear())</script>
-                    GM. Crafted with <i class="fa-solid fa-heart"></i>by JK
-                </p>
-            </div>
+            <!--Footer-->
+            <uc1:Footer runat="server" ID="Footer" />
+            <!--End Footer-->
         </div>
     </form>
 
