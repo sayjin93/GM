@@ -194,6 +194,10 @@ select:focus {
     cursor: pointer;
 }
 
+.tabs .tab > label i {
+    margin-right: 5px;
+}
+
 .tabs .tab [type="radio"] {
     cursor: pointer;
     -webkit-appearance: none;
