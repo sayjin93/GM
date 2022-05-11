@@ -6,6 +6,8 @@
     --color-black: #000000;
 }
 
+/*#region globals*/
+
 * {
     box-sizing: border-box;
 }
@@ -70,6 +72,27 @@ select:focus {
     box-shadow: 0 0 6px #ebeef4;
     background-color: var(--color-white);
 }
+
+/*#endregion*/
+
+/*#region scrollbar*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue-dark);
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}
+
+/*#endregion*/
 
 /*#region logo*/
 
