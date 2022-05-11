@@ -394,7 +394,7 @@ input:checked ~ .accordion-content {
     border: 0;
     border-radius: 4px;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 10px;
     color: rgba(0, 0, 0, 0.6);
     font-family: inherit;
     font-size: inherit;
