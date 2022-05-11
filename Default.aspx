@@ -41,18 +41,36 @@
                                 <label class="accordion-label" for="check1"><i class="fa-solid fa-border-top-left"></i>Group 1</label>
                                 <div class="accordion-content">
                                     <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input id="username" type="text" name="username" required="required" />
+                                        <label for="revision">Revision</label>
+                                        <input id="revision" type="text" name="revision" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input id="password" type="password" name="password" required="required" />
+                                        <label for="description">Description</label>
+                                        <input id="description" type="text" name="description" />
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-remember">
-                                            <input type="checkbox" />Remember Me
-                                        </label>
-                                        <a class="form-recovery" href="#">Forgot Password?</a>
+                                        <label for="effectivity_begin">Effictivity Negin</label>
+                                        <input id="effectivity_begin" type="text" name="effectivity_begin" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="testField1">TestField1</label>
+                                        <select id="testField1" name="testField1">
+                                            <option>Type 1</option>
+                                            <option>Type 2</option>
+                                            <option>Type 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="testField2">TestField2</label>
+                                        <input id="testField2" type="text" name="testField2" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="testField3">TestField3</label>
+                                        <input id="testField3" type="text" name="testField3" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number">Number</label>
+                                        <input id="number" type="text" name="number" />
                                     </div>
 
                                 </div>
@@ -61,7 +79,12 @@
                                 <input type="checkbox" name="check2" id="check2" />
                                 <label class="accordion-label" for="check2"><i class="fa-solid fa-border-top-left"></i>Group 2</label>
                                 <div class="accordion-content">
-                                    <p>I hope you are enjoing the video, don't forget to give your feedback in comment section</p>
+                                    <div class="form-group">
+                                        <label class="form-remember">
+                                            <input type="checkbox" />Remember Me
+                                        </label>
+                                        <a class="form-recovery" href="#">Forgot Password?</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="accordion">
