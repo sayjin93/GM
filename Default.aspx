@@ -32,16 +32,18 @@
             <div class="card">
                 <!--3 Main Tabs-->
                 <div class="tabs">
+                    <!--Tab 1-->
                     <div class="tab">
                         <label for="tab-1"><i class="fa-solid fa-table-columns"></i>Tab 1</label>
                         <input id="tab-1" name="tabs" type="radio" checked="checked" />
                         <div>
+                            <!--Group 1-->
                             <div class="accordion">
                                 <input type="checkbox" name="check1" id="check1" checked="checked" />
                                 <label class="accordion-label" for="check1"><i class="fa-solid fa-border-top-left"></i>Group 1</label>
                                 <div class="accordion-content">
                                     <div class="form-group">
-                                        <label for="revision">Revision</label>
+                                        <label for="revision"><i class="fa-solid fa-asterisk"></i>Revision</label>
                                         <input id="revision" type="text" name="revision" required="required" />
                                     </div>
                                     <div class="form-group">
@@ -72,52 +74,77 @@
                                         <label for="number">Number</label>
                                         <input id="number" type="text" name="number" />
                                     </div>
-
                                 </div>
                             </div>
+                            <!--End Group 1-->
+
+                            <!--Group 2-->
                             <div class="accordion">
                                 <input type="checkbox" name="check2" id="check2" />
                                 <label class="accordion-label" for="check2"><i class="fa-solid fa-border-top-left"></i>Group 2</label>
                                 <div class="accordion-content">
-                                    <div class="form-group">
-                                        <label class="form-remember">
-                                            <input type="checkbox" />Remember Me
-                                        </label>
-                                        <a class="form-recovery" href="#">Forgot Password?</a>
+                                    <div class="form-group center m-0">
+                                        <a id="testField4" class="hyperlink" href="https://www.revzonesolutions.com/" target="_blank">www.revzonesolutions.com</a>
                                     </div>
                                 </div>
                             </div>
+                            <!--End Group 2-->
+
+                            <!--Group 3-->
                             <div class="accordion">
                                 <input type="checkbox" name="check3" id="check3" />
                                 <label class="accordion-label" for="check3"><i class="fa-solid fa-border-top-left"></i>Group 3</label>
                                 <div class="accordion-content">
-                                    <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
+                                    <div class="form-group center">
+                                        Date:
+                                        <asp:Label ID="testField6" runat="server" />
+                                    </div>
                                 </div>
                             </div>
+                            <!--End Group 3-->
                         </div>
                     </div>
+                    <!--End Tab 1-->
+
+                    <!--Tab 2-->
                     <div class="tab">
                         <label for="tab-2"><i class="fa-solid fa-table-columns"></i>Tab 2</label>
                         <input id="tab-2" name="tabs" type="radio" />
                         <div>
-                            <h4>Tab Two</h4>
-                            <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+                            <div class="form-group">
+                                <label for="testField7">TestField7</label>
+                                <input id="testField7" type="text" name="testField7" />
+                            </div>
                         </div>
                     </div>
+                    <!--End Tab 2-->
+
+                    <!--Tab 3-->
                     <div class="tab">
                         <label for="tab-3"><i class="fa-solid fa-table-columns"></i>Tab 3</label>
                         <input id="tab-3" name="tabs" type="radio" />
                         <div>
-                            <h4>Tab Three</h4>
-                            <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+                            <div class="form-group">
+                                <label for="testField8">TestField8</label>
+                                <input id="testField8" type="text" name="testField8" />
+                            </div>
+                            <div class="form-group">
+                                <label for="testField9">TestField9</label>
+                                <select id="testField9" name="testField1">
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                    <!--End Tab 3-->
                 </div>
                 <!--End 3 Main Tabs-->
 
                 <!--Form Submit Button-->
                 <div class="form-group">
-                    <button type="submit" style="margin: -20px 20px 0;">Submit</button>
+                    <button type="submit" style="margin: 0 20px;">Submit</button>
                 </div>
                 <!--End Form Submit Button-->
             </div>

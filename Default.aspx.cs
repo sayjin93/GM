@@ -9,6 +9,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        testField6.Text = DateTime.Now.ToString("dd/MM/yyyy");
     }
 }
