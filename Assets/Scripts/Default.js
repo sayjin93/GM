@@ -63,7 +63,7 @@ function setChkState(id) {
     window.localStorage.setItem(id, checkbox.checked);
 }
 
-
+// Check conditions
 function checkConditions() {
     if (form["testField1"].value == 'Type 1') {
         form["testField3"].style.visibility = 'hidden';
