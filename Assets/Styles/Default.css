@@ -110,31 +110,31 @@ select:focus {
     transition: all 0.3s ease-out;
 }
 
-    .logo::after {
-        position: absolute;
-        content: "";
-        top: -15px;
-        left: 50%;
-        width: 80px;
-        transform: translateX(-50%);
-        height: calc(100% + 30px);
-        opacity: 1;
-        z-index: -1;
-        background-image: linear-gradient(260deg, rgb(4 57 94 / 80%),#1f58c7);
-        animation: border-transform 10s linear infinite alternate forwards;
-        -webkit-transition: all 200ms linear;
-        transition: all 200ms linear;
-    }
+.logo::after {
+    position: absolute;
+    content: "";
+    top: -15px;
+    left: 50%;
+    width: 80px;
+    transform: translateX(-50%);
+    height: calc(100% + 30px);
+    opacity: 1;
+    z-index: -1;
+    background-image: linear-gradient(260deg, rgb(4 57 94 / 80%),#1f58c7);
+    animation: border-transform 10s linear infinite alternate forwards;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
 
-    .logo img {
-        padding: 5px 0;
-        height: 100%;
-        width: auto;
-        display: block;
-        filter: invert(1);
-        -webkit-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
-    }
+.logo img {
+    padding: 5px 0;
+    height: 100%;
+    width: auto;
+    display: block;
+    filter: invert(1);
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
 
 @-webkit-keyframes border-transform {
     0%, 100% {
@@ -210,76 +210,76 @@ select:focus {
     overflow: hidden;
 }
 
-    .tabs .tab {
-        width: 33.333%;
-    }
+.tabs .tab {
+    width: 33.333%;
+}
 
-        .tabs .tab > label {
-            display: block;
-            margin: 0;
-            padding: 20px;
-            line-height: 1em;
-            font-size: 1.1em;
-            text-align: center;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
+.tabs .tab > label {
+    display: block;
+    margin: 0;
+    padding: 20px;
+    line-height: 1em;
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
-            .tabs .tab > label i {
-                margin-right: 5px;
-            }
+.tabs .tab > label i {
+    margin-right: 5px;
+}
 
-        .tabs .tab [type="radio"] {
-            cursor: pointer;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            display: block;
-            margin: 0;
-            width: 100%;
-            -webkit-transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-            border-bottom: 2px solid #e2e5e8;
-        }
+.tabs .tab [type="radio"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    margin: 0;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid #e2e5e8;
+}
 
-            .tabs .tab [type="radio"]:hover,
-            .tabs .tab [type="radio"]:focus {
-                border-bottom: 2px solid var(--color-blue-light);
-            }
+.tabs .tab [type="radio"]:hover,
+.tabs .tab [type="radio"]:focus {
+    border-bottom: 2px solid var(--color-blue-light);
+}
 
-            .tabs .tab [type="radio"]:checked {
-                border-bottom: 2px solid var(--color-blue-dark);
-            }
+.tabs .tab [type="radio"]:checked {
+    border-bottom: 2px solid var(--color-blue-dark);
+}
 
-                .tabs .tab [type="radio"]:checked + div {
-                    opacity: 1;
-                }
+.tabs .tab [type="radio"]:checked + div {
+    opacity: 1;
+}
 
-            .tabs .tab [type="radio"] + div {
-                display: block;
-                opacity: 0;
-                padding: 20px;
-                width: 300%;
-                margin-left: 300%;
-                -webkit-transition: all 0.3s ease-in-out;
-                -moz-transition: all 0.3s ease-in-out;
-                -o-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
-            }
+.tabs .tab [type="radio"] + div {
+    display: block;
+    opacity: 0;
+    padding: 20px;
+    width: 300%;
+    margin-left: 300%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
 
-        .tabs .tab:nth-child(1) [type="radio"]:checked + div {
-            margin-left: 0;
-        }
+.tabs .tab:nth-child(1) [type="radio"]:checked + div {
+    margin-left: 0;
+}
 
-        .tabs .tab:nth-child(2) [type="radio"]:checked + div {
-            margin-left: -100%;
-        }
+.tabs .tab:nth-child(2) [type="radio"]:checked + div {
+    margin-left: -100%;
+}
 
-        .tabs .tab:nth-child(3) [type="radio"]:checked + div {
-            margin-left: -200%;
-        }
+.tabs .tab:nth-child(3) [type="radio"]:checked + div {
+    margin-left: -200%;
+}
 
 /*#endregion*/
 
@@ -293,15 +293,15 @@ select:focus {
     margin-bottom: 20px;
 }
 
-    .accordion:last-child {
-        margin-bottom: 0;
-    }
+.accordion:last-child {
+    margin-bottom: 0;
+}
 
-    .accordion > input {
-        position: absolute;
-        opacity: 0;
-        z-index: -1;
-    }
+.accordion > input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
 
 .accordion-label {
     position: relative;
@@ -317,18 +317,18 @@ select:focus {
     background: var(--color-blue-light)
 }
 
-    .accordion-label:hover {
-        background: rgba(31,88,199,.2);
-    }
+.accordion-label:hover {
+    background: rgba(31,88,199,.2);
+}
 
-    .accordion-label::after {
-        content: "\276F";
-        width: 16px;
-        height: 16px;
-        text-align: center;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-    }
+.accordion-label::after {
+    content: "\276F";
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
 
 .accordion-content {
     max-height: 0;
@@ -346,10 +346,10 @@ input:checked + .accordion-label {
     border-bottom-right-radius: 0;
 }
 
-    input:checked + .accordion-label::after {
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
+input:checked + .accordion-label::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
 
 input:checked ~ .accordion-content {
     max-height: 100vh;
@@ -371,55 +371,55 @@ input:checked ~ .accordion-content {
     margin-bottom: 10px;
 }
 
-    .form-group.center {
-        justify-content: center;
-    }
+.form-group.center {
+    justify-content: center;
+}
 
-    .form-group label {
-        flex: 1 50%;
-        text-align: right;
-        color: rgba(0, 0, 0, 0.6);
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-    }
+.form-group label {
+    flex: 1 50%;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
 
-        .form-group label i[class*="asterisk"] {
-            color: red;
-        }
+.form-group label i[class*="asterisk"] {
+    color: red;
+}
 
-    .form-group input,
-    .form-group select {
-        width: 100%;
-        outline: none;
-        background: rgba(0, 0, 0, 0.1);
-        border: 1px solid transparent;
-        border-radius: 4px;
-        box-sizing: border-box;
-        padding: 10px;
-        color: rgba(0, 0, 0, 0.6);
-        font-family: inherit;
-        font-size: inherit;
-        transition: 0.3s ease;
-    }
+.form-group input,
+.form-group select {
+    width: 100%;
+    outline: none;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: inherit;
+    font-size: inherit;
+    transition: 0.3s ease;
+}
 
-    .form-group button {
-        outline: none;
-        background: #4285F4;
-        width: 100%;
-        border: 0;
-        border-radius: 4px;
-        padding: 12px 20px;
-        color: #FFFFFF;
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: 500;
-        line-height: inherit;
-        text-transform: uppercase;
-        cursor: pointer;
-    }
+.form-group button {
+    outline: none;
+    background: #4285F4;
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 20px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 
 .hyperlink {
     position: relative;
@@ -430,39 +430,39 @@ input:checked ~ .accordion-content {
     transition: .4s;
 }
 
-    .hyperlink:before {
-        content: "";
-        position: absolute;
-        height: 10px;
-        width: 10px;
-        right: 0px;
-        bottom: 0px;
-        background: #9198e5;
-        transition: .5s;
-    }
+.hyperlink:before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 0px;
+    bottom: 0px;
+    background: #9198e5;
+    transition: .5s;
+}
 
-    .hyperlink:after {
-        content: "";
-        position: absolute;
-        height: 10px;
-        width: 10px;
-        left: 0px;
-        top: 0px;
-        background: #9198e5;
-        transition: .5s;
-    }
+.hyperlink:after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    left: 0px;
+    top: 0px;
+    background: #9198e5;
+    transition: .5s;
+}
 
-    .hyperlink:hover:before {
-        width: calc(100% - 2px);
-        height: calc(100% - 2px);
-        background: none;
-        border: 1px solid #9198e5;
-    }
+.hyperlink:hover:before {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: none;
+    border: 1px solid #9198e5;
+}
 
-    .hyperlink:hover:after {
-        width: 0;
-        height: 0;
-    }
+.hyperlink:hover:after {
+    width: 0;
+    height: 0;
+}
 
 
 /*#endregion*/
@@ -474,13 +474,13 @@ input:checked ~ .accordion-content {
     text-align: center;
 }
 
-    .footer p {
-        margin: 0;
-    }
+.footer p {
+    margin: 0;
+}
 
 /*#endregion*/
 
-
+/* For devices with screen width lower than 480px */
 @media screen and (max-width: 480px) {
     .form-group {
         flex-direction: column;

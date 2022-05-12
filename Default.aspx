@@ -3,32 +3,36 @@
 <%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 
-
-
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html lang="en">
+<head>
     <title>GM</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="Assets/Images/favicon.ico" />
 
-
+    <!--Import Google Font Roboto-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" />
+
+    <!--Import FontAwesome Libray-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" />
 
+    <!--Custom Styles-->
     <link rel="stylesheet" href="Assets/Styles/Default.css" />
 </head>
 <body>
     <form id="form1" runat="server">
+        <!--Background Overlay-->
         <div class="overlay"></div>
+        <!--END Background Overlay-->
 
         <div class="container">
 
             <!--Header-->
             <uc1:Header runat="server" ID="Header" />
-            <!--End Header-->
+            <!--END Header-->
 
             <!--Card-->
             <div class="card">
@@ -78,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End Group 1-->
+                            <!--END Group 1-->
 
                             <!--Group 2-->
                             <div class="accordion">
@@ -90,7 +94,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End Group 2-->
+                            <!--END Group 2-->
 
                             <!--Group 3-->
                             <div class="accordion">
@@ -103,10 +107,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End Group 3-->
+                            <!--END Group 3-->
                         </div>
                     </div>
-                    <!--End Tab 1-->
+                    <!--END Tab 1-->
 
                     <!--Tab 2-->
                     <div class="tab">
@@ -119,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Tab 2-->
+                    <!--END Tab 2-->
 
                     <!--Tab 3-->
                     <div class="tab">
@@ -140,24 +144,27 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Tab 3-->
+                    <!--END Tab 3-->
                 </div>
-                <!--End 3 Main Tabs-->
+                <!--END 3 Main Tabs-->
 
                 <!--Form Submit Button-->
                 <div class="form-group">
                     <button type="submit" onclick="validateForm(event)" style="margin: 0 20px;">Save</button>
                 </div>
-                <!--End Form Submit Button-->
+                <!--END Form Submit Button-->
             </div>
-            <!--End Card-->
+            <!--END Card-->
 
             <!--Footer-->
             <uc1:Footer runat="server" ID="Footer" />
-            <!--End Footer-->
+            <!--END Footer-->
+
         </div>
+        <!--END Container-->
     </form>
 
+    <!-- Page JS Plugins + Page JS Code -->
     <script src="Assets/Libraries/sweetalert2@11.js"></script>
     <script src="Assets/Scripts/Default.js"></script>
 </body>
