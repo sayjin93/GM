@@ -14,14 +14,14 @@
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="Assets/Styles/Default.css" />
 </head>
 <body>
-    <form id="form1" runat="server" onsubmit="return false">
+    <form id="form1" runat="server">
         <div class="overlay"></div>
 
         <div class="container">
@@ -49,16 +49,16 @@
                                         <input id="revision" type="text" name="revision" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <input id="description" type="text" name="description" />
+                                        <label for="description"><i class="fa-solid fa-asterisk"></i>Description</label>
+                                        <input id="description" type="text" name="description" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="effectivity_begin">Effictivity Negin</label>
-                                        <input id="effectivity_begin" type="text" name="effectivity_begin" />
+                                        <label for="effectivity_begin"><i class="fa-solid fa-asterisk"></i>Effictivity Negin</label>
+                                        <input id="effectivity_begin" type="text" name="effectivity_begin" required="required" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="testField1">TestField1</label>
-                                        <select id="testField1" name="testField1">
+                                        <label for="testField1"><i class="fa-solid fa-asterisk"></i>TestField1</label>
+                                        <select id="testField1" name="testField1" required="required" onchange="checkConditions()">
                                             <option>Type 1</option>
                                             <option>Type 2</option>
                                             <option>Type 3</option>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="number">Number</label>
-                                        <input id="number" type="text" name="number" />
+                                        <input id="number" type="text" name="number" onchange="checkConditions()" />
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
 
                             <!--Group 2-->
                             <div class="accordion">
-                                <input type="checkbox" name="check_2" id="check_2" onclick="setChkState('check_2')" />
+                                <input type="checkbox" name="check_2" id="check_2" onclick="setChkState('check_2')" checked="checked" />
                                 <label class="accordion-label" for="check_2"><i class="fa-solid fa-border-top-left"></i>Group 2</label>
                                 <div class="accordion-content">
                                     <div class="form-group center m-0">
@@ -94,7 +94,7 @@
 
                             <!--Group 3-->
                             <div class="accordion">
-                                <input type="checkbox" name="check_3" id="check_3" onclick="setChkState('check_3')" />
+                                <input type="checkbox" name="check_3" id="check_3" onclick="setChkState('check_3')" checked="checked" />
                                 <label class="accordion-label" for="check_3"><i class="fa-solid fa-border-top-left"></i>Group 3</label>
                                 <div class="accordion-content">
                                     <div class="form-group center">
@@ -132,7 +132,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="testField9">TestField9</label>
-                                <select id="testField9" name="testField1">
+                                <select id="testField9" name="testField9">
                                     <option>10</option>
                                     <option>11</option>
                                     <option>12</option>
@@ -146,7 +146,7 @@
 
                 <!--Form Submit Button-->
                 <div class="form-group">
-                    <button type="submit" onclick="validateForm()" style="margin: 0 20px;">Save</button>
+                    <button type="submit" onclick="validateForm(event)" style="margin: 0 20px;">Save</button>
                 </div>
                 <!--End Form Submit Button-->
             </div>
