@@ -10,6 +10,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>GM</title>
+    <link rel="icon" type="image/x-icon" href="Assets/Images/favicon.ico" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,8 +41,8 @@
                         <div>
                             <!--Group 1-->
                             <div class="accordion">
-                                <input type="checkbox" name="check1" id="check1" checked="checked" />
-                                <label class="accordion-label" for="check1"><i class="fa-solid fa-border-top-left"></i>Group 1</label>
+                                <input type="checkbox" name="check_1" id="check_1" onclick="setChkState('check_1')" checked="checked" />
+                                <label class="accordion-label" for="check_1"><i class="fa-solid fa-border-top-left"></i>Group 1</label>
                                 <div class="accordion-content">
                                     <div class="form-group">
                                         <label for="revision"><i class="fa-solid fa-asterisk"></i>Revision</label>
@@ -80,8 +82,8 @@
 
                             <!--Group 2-->
                             <div class="accordion">
-                                <input type="checkbox" name="check2" id="check2" />
-                                <label class="accordion-label" for="check2"><i class="fa-solid fa-border-top-left"></i>Group 2</label>
+                                <input type="checkbox" name="check_2" id="check_2" onclick="setChkState('check_2')" />
+                                <label class="accordion-label" for="check_2"><i class="fa-solid fa-border-top-left"></i>Group 2</label>
                                 <div class="accordion-content">
                                     <div class="form-group center m-0">
                                         <a id="testField4" class="hyperlink" href="https://www.revzonesolutions.com/" target="_blank">www.revzonesolutions.com</a>
@@ -92,8 +94,8 @@
 
                             <!--Group 3-->
                             <div class="accordion">
-                                <input type="checkbox" name="check3" id="check3" />
-                                <label class="accordion-label" for="check3"><i class="fa-solid fa-border-top-left"></i>Group 3</label>
+                                <input type="checkbox" name="check_3" id="check_3" onclick="setChkState('check_3')" />
+                                <label class="accordion-label" for="check_3"><i class="fa-solid fa-border-top-left"></i>Group 3</label>
                                 <div class="accordion-content">
                                     <div class="form-group center">
                                         Date:
