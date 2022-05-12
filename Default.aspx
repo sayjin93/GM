@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="Assets/Styles/Default.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" onsubmit="return false">
         <div class="overlay"></div>
 
         <div class="container">
@@ -144,7 +144,7 @@
 
                 <!--Form Submit Button-->
                 <div class="form-group">
-                    <button type="submit" style="margin: 0 20px;">Submit</button>
+                    <button type="submit" onclick="validateForm()" style="margin: 0 20px;">Save</button>
                 </div>
                 <!--End Form Submit Button-->
             </div>
@@ -156,6 +156,7 @@
         </div>
     </form>
 
+    <script src="Assets/Libraries/sweetalert2@11.js"></script>
     <script src="Assets/Scripts/Default.js"></script>
 </body>
 </html>
