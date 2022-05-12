@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>GM Docs</title>
+
+    <meta name="description" content="GeneralMotors documentation created by jk">
+    <meta name="author" content="jk">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/docs.min.css">
+</head>
+
+<body>
+    <!-- Page Container -->
+    <div id="page-container" class="sidebar-o side-scroll">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <div class="content-side content-side-full pos-relative">
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <div class="pos-absolute pos-top-right d-lg-none">
+                        <a class="d-inline-block text-danger m-3" href="javascript:void(0)" data-toggle="layout"
+                           data-action="sidebar_close">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                    <!-- END Close Sidebar -->
+                    <!-- Side Header -->
+                    <div class="mb-3">
+                        <h1 class="font-size-lg font-w700 mb-2">
+                            GM <a href="">Docs</a>
+                        </h1>
+                        <div class="font-size-sm font-w600 text-muted">v1.0 - May 13, 2022</div>
+                    </div>
+                    <!-- END Side Header -->
+                    <!-- Side Navigation -->
+                    <ul class="nav-main">
+                        <li class="nav-main-heading">Template</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-changelog" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-list text-primary"></i>
+                                <span class="nav-main-link-name">Changelog</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-updating" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-arrow-up text-primary"></i>
+                                <span class="nav-main-link-name">Updating</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">Structure</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-html" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-code text-info"></i>
+                                <span class="nav-main-link-name">HTML</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-css" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-code text-info"></i>
+                                <span class="nav-main-link-name">CSS</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-javascript" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-code text-info"></i>
+                                <span class="nav-main-link-name">JavaScript</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">More</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-tips" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-thumbs-up text-warning"></i>
+                                <span class="nav-main-link-name">Quick Tips</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-credits" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-link text-warning"></i>
+                                <span class="nav-main-link-name">Credits</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-heading">JK</li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="#section-thankyou" data-toggle="scroll-to" data-offset="50">
+                                <i class="nav-main-link-icon fa fa-heart text-danger"></i>
+                                <span class="nav-main-link-name">Thank you</span>
+                            </a>
+                        </li>
+                        <li class="nav-main-item">
+                            <a class="nav-main-link" href="https://jkruja.com">
+                                <i class="nav-main-link-icon fa fa-globe text-danger"></i>
+                                <span class="nav-main-link-name">jkruja.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- END Side Navigation -->
+                </div>
+            </div>
+            <!-- Sidebar Content -->
+        </nav>
+        <!-- END Sidebar -->
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Toggle Sidebar -->
+            <div class="pos-fixed pos-ontop-content d-print-none">
+                <button type="button" class="btn btn-secondary pos-absolute pos-top-left m-1 m-lg-3" data-toggle="layout"
+                        data-action="sidebar_toggle">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- END Toggle Sidebar -->
+            <!-- Page Content -->
+            <div class="content">
+                <!-- Changelog -->
+                <h2 id="section-changelog">Changelog</h2>
+                <div class="accordion" id="changelog">
+                    <!-- Update 1.0 -->
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0" id="changelog-update10-h">
+                                <button class="btn btn-link font-w600 p-0" type="button" data-toggle="collapse"
+                                        data-target="#changelog-update10-c" aria-expanded="true"
+                                        aria-controls="changelog-update10-c">
+                                    1.0 Initial Release
+                                </button>
+                            </h5>
+                            <div class="font-size-sm text-muted">May 13, 2022</div>
+                        </div>
+                        <div id="changelog-update10-c" class="collapse show" aria-labelledby="changelog-update10-h"
+                             data-parent="#changelog">
+                            <div class="card-body">
+                                <h4>New Features</h4>
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa fa-plus fa-li text-success"></i> Initial Release build with Javascript
+                                    </li>
+                                </ul>
+                                <h4>Improvements</h4>
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa fa-check fa-li text-primary"></i> Replaced header and footer with Web
+                                        User Control
+                                    </li>
+                                </ul>
+                                <h4>Fixes</h4>
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa fa-heartbeat fa-li text-danger"></i> <code>file.extension</code> bug
+                                        fixes
+                                    </li>
+                                </ul>
+                                <h4>Updates</h4>
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa fa-angle-double-up fa-li text-info"></i> SweetAlert2 (11.4.13)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Update 1.0 -->
+                </div>
+                <!-- END Changelog -->
+                <!-- Updating -->
+                <h2 id="section-updating">Updating</h2>
+                <p>
+                    <strong>GM</strong> will receive free updates in the future. One of the main goals was to make sure
+                    the update progress is going to be as easy as possible. Due to its nature (template), updating can
+                    become an
+                    unpleasant task.
+                </p>
+                <p>
+                    Therefore we’ve tried to make it as easy as possible to let you apply your own overrides (in case you
+                    would
+                    like to) to both Sass (<code>_css/</code>) or JavaScript (<code>_js/</code>) files without altering the
+                    original files. Please check <a href="#section-css" data-toggle="scroll-to" data-offset="50">Sass</a>
+                    and <a href="#section-javascript" data-toggle="scroll-to" data-offset="50">JavaScript</a> section for more
+                    info!
+                </p>
+                <p>
+                    In general, the following core folders/files will have to be updated with each update:
+                </p>
+                <div class="bg-body-light p-3 rounded push">
+                    <h3 class="mt-0">
+                        Project Structure
+                    </h3>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <i class="far fa-folder fa-li"></i>
+                            <code>Assets</code>
+                            <ul class="fa-ul">
+                                <li>
+                                    <i class="far fa-folder fa-li"></i>
+                                    <code>Images/*</code>
+                                </li>
+                                <li>
+                                    <i class="far fa-folder fa-li"></i>
+                                    <code>Libraries/*</code>
+                                </li>
+                                <li>
+                                    <i class="far fa-folder fa-li"></i>
+                                    <code>Scripts</code>
+                                    <ul class="fa-ul">
+                                        <li>
+                                            <i class="far fa-file-alt fa-li"></i>
+                                            <code>Default.js</code>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="far fa-folder fa-li"></i>
+                                    <code>Styles</code>
+                                    <ul class="fa-ul">
+                                        <li>
+                                            <i class="far fa-file-alt fa-li"></i>
+                                            <code>Default.css</code>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="far fa-folder fa-li"></i>
+                            <code>UserControls</code>
+                            <ul class="fa-ul">
+                                <li>
+                                    <i class="far fa-file-alt fa-li"></i>
+                                    <code>Header.ascx</code>
+                                </li>
+                                <li>
+                                    <i class="far fa-file-alt fa-li"></i>
+                                    <code>Footer.ascx</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="far fa-file-alt fa-li"></i>
+                            <code>Default.aspx</code>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning">
+                    <p class="mb-0">
+                        Remember that it’s always a good idea to backup your work before updating to a new
+                        version!
+                    </p>
+                </div>
+                <!-- END Updating -->
+                <!-- HTML -->
+                <h2 id="section-html">HTML</h2>
+                <p>
+                    <strong>GM</strong> features a super flexible, smart and powerful layout which can be used to create
+                    dashboard and website pages with minimum effort using the same resources.
+                </p>
+
+                <p>
+                    Let’s have a quick look at the generic HTML structure and get familiar with the layout:
+                </p>
+                <pre class="pre-sh">
+<code class="html">&lt;!DOCTYPE html&gt;<br />
+&lt;html lang=&quot;en&quot;&gt;<br />
+&lt;head&gt;<br />
+    &lt;title&gt;GM&lt;/title&gt;<br />
+    &lt;meta charset=&quot;utf-8&quot; /&gt;<br />
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot; /&gt;<br />
+    &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;Assets/Images/favicon.ico&quot; /&gt;<br />
+<br />
+    &lt;!--Import Google Font Roboto--&gt;<br />
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;<br />
+    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin=&quot;anonymous&quot; /&gt;<br />
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap&quot; /&gt;<br />
+<br />
+    &lt;!--Import FontAwesome Libray--&gt;<br />
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css&quot; crossorigin=&quot;anonymous&quot; /&gt;<br />
+<br />
+    &lt;!--Custom Styles--&gt;<br />
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;Assets/Styles/Default.css&quot; /&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+    &lt;form id=&quot;form1&quot; runat=&quot;server&quot;&gt;<br />
+        &lt;!--Background Overlay--&gt;<br />
+        &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;<br />
+        &lt;!--END Background Overlay--&gt;<br />
+<br />
+        &lt;div class=&quot;container&quot;&gt;<br />
+<br />
+            &lt;!--Header--&gt;<br />
+            &lt;uc1:Header runat=&quot;server&quot; ID=&quot;Header&quot; /&gt;<br />
+            &lt;!--END Header--&gt;<br />
+<br />
+            &lt;!--Card--&gt;<br />
+            &lt;div class=&quot;card&quot;&gt;<br />
+                &lt;!--3 Main Tabs--&gt;<br />
+                &lt;div class=&quot;tabs&quot;&gt;<br />
+                    &lt;!--Tab 1--&gt;<br />
+                    &lt;div class=&quot;tab&quot;&gt;<br />
+                        &lt;label for=&quot;tab-1&quot;&gt;&lt;i class=&quot;fa-solid fa-table-columns&quot;&gt;&lt;/i&gt;Tab 1&lt;/label&gt;<br />
+                        &lt;input id=&quot;tab-1&quot; name=&quot;tabs&quot; type=&quot;radio&quot; checked=&quot;checked&quot; /&gt;<br />
+                        &lt;div&gt;<br />
+                            &lt;!--Group 1--&gt;<br />
+                            &lt;div class=&quot;accordion&quot;&gt;<br />
+                                ...<br />
+                            &lt;/div&gt;<br />
+                            &lt;!--END Group 1--&gt;<br />
+<br />
+                            &lt;!--Group 2--&gt;<br />
+                            &lt;div class=&quot;accordion&quot;&gt;<br />
+                                ...<br />
+                            &lt;/div&gt;<br />
+                            &lt;!--END Group 2--&gt;<br />
+<br />
+                            &lt;!--Group 3--&gt;<br />
+                            &lt;div class=&quot;accordion&quot;&gt;<br />
+                                ...<br />
+                            &lt;/div&gt;<br />
+                            &lt;!--END Group 3--&gt;<br />
+                        &lt;/div&gt;<br />
+                    &lt;/div&gt;<br />
+                    &lt;!--END Tab 1--&gt;<br />
+<br />
+                    &lt;!--Tab 2--&gt;<br />
+                    &lt;div class=&quot;tab&quot;&gt;<br />
+                        &lt;label for=&quot;tab-2&quot;&gt;&lt;i class=&quot;fa-solid fa-table-columns&quot;&gt;&lt;/i&gt;Tab 2&lt;/label&gt;<br />
+                        &lt;input id=&quot;tab-2&quot; name=&quot;tabs&quot; type=&quot;radio&quot; /&gt;<br />
+                        &lt;div&gt;<br />
+                            ...<br />
+                        &lt;/div&gt;<br />
+                    &lt;/div&gt;<br />
+                    &lt;!--END Tab 2--&gt;<br />
+<br />
+                    &lt;!--Tab 3--&gt;<br />
+                    &lt;div class=&quot;tab&quot;&gt;<br />
+                        &lt;label for=&quot;tab-3&quot;&gt;&lt;i class=&quot;fa-solid fa-table-columns&quot;&gt;&lt;/i&gt;Tab 3&lt;/label&gt;<br />
+                        &lt;input id=&quot;tab-3&quot; name=&quot;tabs&quot; type=&quot;radio&quot; /&gt;<br />
+                        &lt;div&gt;<br />
+                            ...<br />
+                        &lt;/div&gt;<br />
+                    &lt;/div&gt;<br />
+                    &lt;!--END Tab 3--&gt;<br />
+                &lt;/div&gt;<br />
+                &lt;!--END 3 Main Tabs--&gt;<br />
+<br />
+                &lt;!--Form Submit Button--&gt;<br />
+                &lt;div class=&quot;form-group&quot;&gt;<br />
+                    &lt;button type=&quot;submit&quot; onclick=&quot;validateForm(event)&quot; style=&quot;margin: 0 20px;&quot;&gt;Save&lt;/button&gt;<br />
+                &lt;/div&gt;<br />
+                &lt;!--END Form Submit Button--&gt;<br />
+            &lt;/div&gt;<br />
+            &lt;!--END Card--&gt;<br />
+<br />
+            &lt;!--Footer--&gt;<br />
+            &lt;uc1:Footer runat=&quot;server&quot; ID=&quot;Footer&quot; /&gt;<br />
+            &lt;!--END Footer--&gt;<br />
+<br />
+        &lt;/div&gt;<br />
+        &lt;!--END Container--&gt;<br />
+    &lt;/form&gt;<br />
+<br />
+    &lt;!-- Page JS Plugins + Page JS Code --&gt;<br />
+    &lt;script src=&quot;Assets/Libraries/sweetalert2@11.js&quot;&gt;&lt;/script&gt;<br />
+    &lt;script src=&quot;Assets/Scripts/Default.js&quot;&gt;&lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</code>
+            </pre>
+                <p>
+                    As you can see, we kept the HTML structure as simple as possible, so we hope that you find it easy to
+                    understand and implement in your own pages.
+                </p>
+                <!-- END HTML -->
+                <!-- CSS -->
+                <h2 id="section-css">CSS</h2>
+                <p>
+                    <strong>GM</strong> was built with <code>CSS</code> syntax but in the next release it will be converted
+                    in <code>SCSS</code> that is a powerful CSS pre-processor which extends the CSS language, adding
+                    features that allow variables, mixins, functions and many other techniques, enabling you to make CSS
+                    that is more
+                    maintainable and extendable.
+                </p>
+                <p>
+                    Let’s have a better look at the CSS files structure:
+                </p>
+                <div class="table-responsive push">
+                    <table class="table table-bordered mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Files</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <i class="far fa-fw fa-file-alt mr-1"></i>
+                                    <code>Default.css</code>
+                                </td>
+                                <td>
+                                    <p class="mb-0">
+                                        This file is main CSS stylesheet.<br />
+                                        Everything is built from scratch without using any framework so that the code will be
+                                        easy readable and the file size will be smaller. Designed with regions in mind, you can
+                                        easily delete any regions that you do not intend to use.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <pre class="pre-sh">
+<code class="css">/*CSS Variable declarations*/
+:root {
+    --variable-name: variable-value;
+}
+
+
+/*#region globals*/
+    ...
+/*#endregion*/
+
+
+/*#region scrollbar*/
+    ...
+/*#endregion*/
+
+
+/*#region logo*/
+    ...
+/*#endregion*/
+
+
+/*#region tabs*/
+    ...
+/*#endregion*/
+
+
+/*#region accordion*/
+    ...
+/*#endregion*/
+
+
+/*#region form*/
+    ...
+
+        /*#region hyperlink*/
+            ...
+        /*#endregion*/
+
+/*#endregion*/
+
+
+/*#region footer*/
+    ...
+/*#endregion*/
+
+
+/* For devices with screen width lower than 480px */
+@media screen and (max-width: 480px) {
+    ...
+}</code>
+            </pre>
+                <!-- END CSS -->
+                <!-- JavaScript -->
+                <h2 id="section-javascript">JavaScript</h2>
+                <p>
+                    <strong>GM</strong> custom JS functionality was built from scratch with ES6 (ECMAScript 2015). This
+                    enabled
+                    us to take advantage of many new features which weren't available in ES5 (the version most web browsers
+                    support and run) and write clean and more maintainable code.
+                </p>
+                <p>
+                    We use webpack to bundle together separate JS files and Babel to compile ES6 to ES5. You can take
+                    advantage of
+                    webpack and use it to also import plugins and libraries from the <code>node_modules</code> folder
+                    directly in
+                    the custom code since all third party plugins used in <strong>GM</strong> will be installed with npm,
+                    too,
+                    after running <code>npm install</code>.
+                </p>
+                <p>
+                    ES6 JS code can be found under <code>assets/_js/</code> folder. These files have to be compiled to ES5
+                    first
+                    before we include them in our pages and this is completely <a href="#section-gulp"
+                                                                                  data-toggle="scroll-to">
+                        automated through
+                        the tasks
+                    </a> we've created.
+                </p>
+                <div class="table-responsive push">
+                    <table class="table table-bordered mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Files</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="w-25">
+                                    <i class="far fa-folder mr-1"></i>
+                                    <code>main/*</code>
+                                </td>
+                                <td class="text-muted">
+                                    <p class="mb-0">
+                                        Vital libraries (Bootstrap + SimpleBar) and custom <strong>GM</strong> JS
+                                        functionality used in all pages. If you would
+                                        like to add your own functionality or overrides, you can do so in
+                                        <code>assets/_js/main/app.js</code> (the inline comments will guide you through).
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-folder mr-1"></i>
+                                    <code>pages/*</code>
+                                </td>
+                                <td class="text-muted">
+                                    <p class="mb-0">
+                                        Files with custom code showcasing various plugin examples. They are used separately only
+                                        in specific
+                                        pages.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert alert-warning push">
+                    <p class="mb-0">
+                        Please make sure that you don’t use snippets from ES6 code directly in your pages since older
+                        browsers won't
+                        be able to run them.
+                    </p>
+                </div>
+              
+                <p>
+                    Finally, let’s have a better look at few custom helpers:
+                </p>
+
+                <div class="table-responsive push">
+                    <table class="js-table-sections table table-bordered table-vcenter mb-0">
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">Print Page</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        A helper which prints the main content of the current page.
+                                    </p>
+                                    <p class="mb-3">
+                                        <strong>Helper</strong> (just by calling the following function):
+                                    </p>
+                                    <pre class="pre-sh mb-0"><code class="pwrap javascript">One.helpers('one-print');</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">Class Toggle</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        A helper which allows you to toggle a custom class on the element of your choice on
+                                        button click.
+                                    </p>
+                                    <p class="mb-3">
+                                        <strong>Helper</strong>:
+                                    </p>
+                                    <p class="mb-3">
+                                        This helper is already called by default on page load. You only must call it again if
+                                        you inject new
+                                        markup to the page and would like to init the functionality on it.
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap javascript">One.helpers(&apos;one-toggle-class&apos;);</code></pre>
+                                    <p class="mb-3">
+                                        <strong>Usage</strong>:
+                                    </p>
+                                    <p class="mb-3">
+                                        Your target element
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;div class=&quot;js-target-class&quot;&gt;&lt;/div&gt;</code></pre>
+                                    <p class="mb-3">
+                                        Your button
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;button type=&quot;button&quot; data-toggle=&quot;class-toggle&quot; data-target=&quot;.js-target-class&quot; data-class=&quot;your-class&quot;&gt;
+    Toggle
+&lt;/button&gt;</code></pre>
+                                    <p class="mb-0">
+                                        <em>
+                                            In this specific example, each button click will toggle the class 'your-class' on
+                                            the element
+                                            with class 'js-target-class'.
+                                        </em>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">Ripple</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        A helper which animates a ripple on button click.
+                                    </p>
+                                    <p class="mb-3">
+                                        <strong>Helper</strong>:
+                                    </p>
+                                    <p class="mb-3">
+                                        This helper is already called by default on page load. You only must call it again if
+                                        you inject new
+                                        markup to the page and would like to init the functionality on it.
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap javascript">One.helpers(&apos;one-ripple&apos;);</code></pre>
+                                    <p class="mb-3">
+                                        <strong>Usage</strong> (add data-* attributes to a button):
+                                    </p>
+                                    <pre class="pre-sh mb-0"><code class="pwrap html">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;click-ripple&quot;&gt;Primary&lt;/button&gt;</code></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">Table Sections</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        A helper which allows you to create table sections that toggle on row click (like an
+                                        accordion
+                                        component).
+                                    </p>
+                                    <p class="mb-3">
+                                        <strong>Helper</strong> (call it after all JS scripts are added):
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;script&gt;One.helpersOnLoad(&apos;one-table-tools-sections&apos;);&lt;/script&gt;</code></pre>
+                                    <p class="mb-3">
+                                        <strong>Usage</strong>:
+                                    </p>
+                                    <p class="mb-3">
+                                        1. Add the class <code>js-table-sections</code> to your table
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;table class=&quot;js-table-sections table table-hover&quot;&gt;
+  ...
+&lt;/table&gt;</code></pre>
+                                    <p class="mb-3">
+                                        2. Use the following markup in your table to create clickable header rows and their
+                                        content
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">...
+&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
+&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
+&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
+&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
+&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
+&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
+...
+</code></pre>
+                                    <p class="mb-0">
+                                        <em>Please check out Helpers page under Tables for usage examples.</em>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">Checkable Table</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        A helper which allows you to create a table with checkable rows.
+                                    </p>
+                                    <p class="mb-3">
+                                        <strong>Helper</strong> (call it after all JS scripts are added):
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;script&gt;One.helpersOnLoad(&apos;one-table-tools-checkable&apos;);&lt;/script&gt;</code></pre>
+                                    <p class="mb-3">
+                                        <strong>Usage</strong>:
+                                    </p>
+                                    <p class="mb-3">
+                                        1. Add the class <code>js-table-checkable</code> to your table
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">&lt;table class=&quot;js-table-checkable table table-hover&quot;&gt;
+  ...
+&lt;/table&gt;</code></pre>
+                                    <p class="mb-3">
+                                        2. Use similar markup in your table to create checkable rows
+                                    </p>
+                                    <pre class="pre-sh"><code class="pwrap html">...
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;check-all&quot; name=&quot;check-all&quot;&gt;
+    &lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;row_1&quot; name=&quot;row_1&quot;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;Name 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;row_2&quot; name=&quot;row_2&quot;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;Name 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+...
+</code></pre>
+                                    <p class="mb-0">
+                                        <em>Please check out Helpers page under Tables for usage examples.</em>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="alert alert-info push">
+                    <p>
+                        You can run multiple helpers in a page by using an array:<br><code>
+                            One.helpers(['helper1',
+                            'helper2', 'helper3']);
+                        </code>
+                    </p>
+                    <p class="mb-0">
+                        Alternatively, you can also use helpersOnLoad function to run them once DOM Content is
+                        loaded:<br><code>One.helpersOnLoad(['helper1', 'helper2', 'helper3']);</code>
+                    </p>
+                </div>
+                <div class="alert alert-info push">
+                    <p class="mb-0">
+                        Feel free to ignore the provided helpers and use your own plugin inits after you’ve included the
+                        resources
+                        of the ones you need in your page.
+                    </p>
+                </div>
+                <div class="alert alert-warning push">
+                    <p class="mb-0">
+                        When a helper is called and functionality/plugin is initialized, a class <code>js-HELPER_NAME-enabled</code>
+                        is auto added to the element. This ensures that if you add a similar element dynamically to your
+                        page and
+                        call the helper again, the functionality/plugin will be initialized only on the new element. It’s a
+                        nice
+                        convenient solution but please have in mind that if you copy-paste an element to your markup from
+                        your
+                        browser’s developer tools, then you will also copy this extra class, so remember to remove it!
+                    </p>
+                </div>
+                <!-- END JavaScript -->
+                <!-- Quick Tips -->
+                <h2 id="section-tips">Quick Tips</h2>
+                <h3>High resolution screens</h3>
+                <p>
+                    The UI will look crispy clear on high resolution screens and if you would like your images to look
+                    great, too,
+                    then you will have to use the <code>srcset</code> attribute of the <code>&lt;img&gt;</code> element. For
+                    example, if you have an image <code>url/to/image.jpg</code> and its high resolution version
+                    <code>url/to/image@2x.jpg</code>, you will have to use the following markup:
+                </p>
+                <pre class="pre-sh"><code class="html">&lt;img src="url/to/image.jpg" srcset="url/to/image@2x.jpg 2x" alt="Image Description"&gt;</code></pre>
+                <p>
+                    The browser will auto select the best version and load it accordingly. Older browsers will ignore the
+                    <code>srcset</code> attribute and will load the regular image as usual.
+                </p>
+
+                <h3>Demo Forms</h3>
+                <p>
+                    Please remember to remove <code>onsubmit=&quot;return false;&quot;</code> from <code>&lt;form&gt;</code>
+                    tags
+                    if you are using a form from the example pages. It is just added to prevent forms from submitting in
+                    case you
+                    click on a submit button while previewing the pages.
+                </p>
+
+                <h3>Favicons</h3>
+                <p>
+                    If you would like to auto create your favicons from your image/logo, you can use the free service over
+                    at <a href="http://realfavicongenerator.net">http://realfavicongenerator.net</a>
+                </p>
+                <!-- END Quick Tips -->
+                <!-- Credits -->
+                <h2 id="section-credits">Credits</h2>
+                <p>
+                    We’ve used the following resources as listed. Special thanks to all the authors for their hard work!
+                </p>
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Icons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://fontawesome.com/">Font Awesome 6</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="text-left">Libraries/Scripts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://fonts.google.com/">Google Fonts</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="hhttps://sweetalert2.github.io/">SweetAlert2</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- END Credits -->
+                <!-- Thank You -->
+                <h2 id="section-thankyou">Thank You!</h2>
+                <p>
+                    Thank you so much for your time! I wish you all the best with
+                    your upcoming projects and endeavors in life! If you would like to check out more of my work, be sure to
+                    visit <a href="https://jkruja.com">my website</a>.
+                </p>
+                <p>
+                    <strong>Have a great day and happy coding!</strong>
+                </p>
+                <!-- END Thank You -->
+            </div>
+            <!-- END Page Content -->
+            <!-- JK Logo -->
+            <div class="overflow-hidden py-6 bg-body-light text-center">
+                <img class="img-fluid invisible" src="assets/media/various/logo.svg" alt="jk logo"
+                     data-toggle="appear" data-class="animated fadeInDown">
+            </div>
+            <!-- END JK Logo -->
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <footer id="page-footer">
+            <div class="content content-full font-size-sm d-flex flex-column flex-sm-row justify-content-sm-between text-center text-sm-left">
+                <div class="py-2 py-sm-0">
+                    <strong>GM Docs</strong> &copy; <span data-toggle="year-copy"></span>
+                </div>
+                <div class="py-2 py-sm-0">
+                    Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600"
+                                                                               href="https://jkruja.com">JK</a>
+                </div>
+            </div>
+        </footer>
+        <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+    <!-- Docs JS -->
+    <script src="assets/js/docs.min.js"></script>
+</body>
+
+</html>
