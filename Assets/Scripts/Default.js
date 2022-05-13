@@ -7,7 +7,7 @@ let form = document.forms["form1"];
 // Function to run when DOM Content has loaded
 function init(event) {
     getChkState();
-    checkConditions();
+    checkTestField1();
 }
 
 // Form validation
@@ -49,7 +49,7 @@ function validateForm(e) {
     return false;
 }
 
-// Check checkboxes value in localStorage and set attribute in html element
+// Check checkboxes value in localStorage and set attribute in html element (included in init)
 function getChkState() {
     for (let key in window.localStorage)
         if (key.indexOf('check_') == 0) {
@@ -63,36 +63,39 @@ function setChkState(id) {
     window.localStorage.setItem(id, checkbox.checked);
 }
 
-// Check conditions
-function checkConditions() {
-    if (form["testField1"].value == 'Type 1') {
-        form["testField3"].style.visibility = 'hidden';
+// Check conditions for checkTestField1 (included in init)
+function checkTestField1() {
+    // Reset previous modification
+    form["testField3"].style.visibility = 'visible';
+    form["testField3"].previousElementSibling.style.visibility = 'visible';
+    form["testField2"].removeAttribute('required', '');
+    if (form["testField2"].previousElementSibling.children[0] != null) {
+        form["testField2"].previousElementSibling.children[0].remove();
     }
-    else {
-        form["testField3"].style.visibility = 'visible';
-    }
+    form["description"].style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+    form["testField8"].readOnly = false;
 
-    if (form["testField1"].value == 'Type 2') {
+    if (form["testField1"].value == 'Type 1') {
+        // If Type 1 is selected
+        form["testField3"].style.visibility = 'hidden';
+        form["testField3"].previousElementSibling.style.visibility = 'hidden';
+    }
+    else if (form["testField1"].value == 'Type 2') {
+        // If Type 2 is selected
         form["testField2"].setAttribute('required', '');
         form["testField2"].previousElementSibling.insertAdjacentHTML('afterbegin', '<i class="fa-solid fa-asterisk"></i>');
 
-        form["description"].style.backgroundColor = 'rgba(205,92,92)'; // this row is not needed because it is overriden emediately by the next row
+        form["description"].style.backgroundColor = 'rgba(205,92,92)'; // this row is not needed because it is overriden immediately by the next row
         form["description"].style.backgroundColor = 'rgba(188,143,143)';
     }
     else {
-        form["testField2"].removeAttribute('required', '');
-        form["testField2"].previousElementSibling.remove('i');
-
-        form["description"].style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-    }
-
-    if (form["testField1"].value == 'Type 3') {
+        // If Type 3 is selected
         form["testField8"].readOnly = true;
     }
-    else {
-        form["testField8"].readOnly = false;
-    }
+}
 
+// Check conditions for number (executed onkeyup)
+function checkNumber() {
     if (form["number"].value == 'Test') {
         form["testField8"].style.backgroundColor = 'rgba(169,169,169)';
     }

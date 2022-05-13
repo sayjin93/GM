@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="testField1"><i class="fa-solid fa-asterisk"></i>TestField1</label>
-                                        <select id="testField1" name="testField1" required="required" onchange="checkConditions()">
+                                        <select id="testField1" name="testField1" required="required" onchange="checkTestField1()">
                                             <option>Type 1</option>
                                             <option>Type 2</option>
                                             <option>Type 3</option>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="number">Number</label>
-                                        <input id="number" type="text" name="number" onchange="checkConditions()" />
+                                        <input id="number" type="text" name="number" onkeyup="checkNumber();" />
                                     </div>
                                 </div>
                             </div>
