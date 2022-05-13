@@ -103,3 +103,29 @@ function checkNumber() {
         form["testField8"].style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     }
 }
+
+
+// Download image on button click
+const downloadBtn = document.getElementById('downloadImage');
+const imageUrl = document.getElementsByClassName('img2Down')[0].getElementsByTagName('img')[0].currentSrc;
+
+downloadBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    downloadImage(imageUrl);
+})
+
+async function downloadImage(imageUrl) {
+    fetch(imageUrl, {
+        mode: 'no-cors',
+    })
+        .then(response => response.blob())
+        .then(blob => {
+            let blobUrl = window.URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.download = imageUrl.replace(/^.*[\\\/]/, '');
+            a.href = blobUrl;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        })
+}

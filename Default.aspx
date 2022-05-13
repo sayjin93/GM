@@ -34,6 +34,13 @@
             <uc1:Header runat="server" ID="Header" />
             <!--END Header-->
 
+            <!--Image to Download-->
+            <div class="img2Down">
+                <img src="Assets/Images/toDownload.png" height="140" alt="Screenshot" />
+                <button id="downloadImage" type="submit">Download Image</button>
+            </div>
+            <!-- END Image to Download-->
+
             <!--Card-->
             <div class="card">
                 <!--3 Main Tabs-->

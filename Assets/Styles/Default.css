@@ -250,7 +250,6 @@ input[readonly] {
 /*#endregion*/
 
 /*#region tabs*/
-
 .tabs {
     display: -webkit-flex;
     display: -moz-flex;
@@ -360,7 +359,6 @@ input[readonly] {
     -webkit-box-pack: justify;
     justify-content: space-between;
     padding: 16px;
-    font-weight: bold;
     cursor: pointer;
     font-size: 20px;
     border-radius: 7px;
@@ -466,25 +464,58 @@ input:checked ~ .accordion-content {
         color: #FFFFFF;
         font-family: inherit;
         font-size: inherit;
-        font-weight: 500;
+        font-weight: 700;
         line-height: inherit;
         text-transform: uppercase;
         cursor: pointer;
     }
 
         .form-group button:hover {
-            color: var(--color-blue-dark);
-            background: var(--color-blue-light);
+            background: #3473db;
         }
 
         .form-group button:active {
-            background: rgba(31,88,199,.2);
+            background: #2d6ed9;
+        }
+
+/*#endregion*/
+
+/*#region img2Down*/
+
+.img2Down {
+    padding: 0 20px 20px;
+    text-align: right;
+}
+
+    .img2Down > * {
+        display: block;
+        margin-left: auto;
+        width: 140px;
+    }
+
+    .img2Down img {
+        border: 1px solid var(--color-blue-dark);
+    }
+
+    .img2Down button {
+        border: 0;
+        padding: 5px;
+        cursor: pointer;
+        color: var(--color-white);
+        background: #4285F4;
+    }
+
+        .img2Down button:hover {
+            background: #3473db;
+        }
+
+        .img2Down button:active {
+            background: #2d6ed9;
         }
 
 /*#endregion*/
 
 /*#region footer*/
-
 .footer {
     padding: 20px;
     text-align: center;
