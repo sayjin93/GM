@@ -491,26 +491,11 @@
                 <p>
                     <strong>GM</strong> custom JS functionality was built from scratch with ES6 (ECMAScript 2015). This
                     enabled
-                    us to take advantage of many new features which weren't available in ES5 (the version most web browsers
+                    us to take advantage of many new features (ex. the let and const keyword) which weren't available in ES5 (the version most web browsers
                     support and run) and write clean and more maintainable code.
                 </p>
                 <p>
-                    We use webpack to bundle together separate JS files and Babel to compile ES6 to ES5. You can take
-                    advantage of
-                    webpack and use it to also import plugins and libraries from the <code>node_modules</code> folder
-                    directly in
-                    the custom code since all third party plugins used in <strong>GM</strong> will be installed with npm,
-                    too,
-                    after running <code>npm install</code>.
-                </p>
-                <p>
-                    ES6 JS code can be found under <code>assets/_js/</code> folder. These files have to be compiled to ES5
-                    first
-                    before we include them in our pages and this is completely <a href="#section-gulp"
-                                                                                  data-toggle="scroll-to">
-                        automated through
-                        the tasks
-                    </a> we've created.
+                    ES6 JS code can be found under <code>Assets/Scripts/</code> folder.
                 </p>
                 <div class="table-responsive push">
                     <table class="table table-bordered mb-0">
@@ -523,28 +508,12 @@
                         <tbody>
                             <tr>
                                 <td class="w-25">
-                                    <i class="far fa-folder mr-1"></i>
-                                    <code>main/*</code>
+                                    <i class="far fa-fw fa-file-alt mr-1"></i>
+                                    <code>Default.js</code>
                                 </td>
                                 <td class="text-muted">
                                     <p class="mb-0">
-                                        Vital libraries (Bootstrap + SimpleBar) and custom <strong>GM</strong> JS
-                                        functionality used in all pages. If you would
-                                        like to add your own functionality or overrides, you can do so in
-                                        <code>assets/_js/main/app.js</code> (the inline comments will guide you through).
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="far fa-folder mr-1"></i>
-                                    <code>pages/*</code>
-                                </td>
-                                <td class="text-muted">
-                                    <p class="mb-0">
-                                        Files with custom code showcasing various plugin examples. They are used separately only
-                                        in specific
-                                        pages.
+                                        This is the main JS file containing the functionality used in the project.
                                     </p>
                                 </td>
                             </tr>
@@ -558,237 +527,197 @@
                         be able to run them.
                     </p>
                 </div>
-              
+
                 <p>
-                    Finally, let’s have a better look at few custom helpers:
+                    Finally, let’s have a better look at few custom function:
                 </p>
 
                 <div class="table-responsive push">
                     <table class="js-table-sections table table-bordered table-vcenter mb-0">
                         <tbody class="js-table-sections-header">
                             <tr>
-                                <td class="font-w600">Print Page</td>
+                                <td class="font-w600">init</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>
                                     <p>
-                                        A helper which prints the main content of the current page.
+                                        Function to run when DOM Content has loaded.
                                     </p>
-                                    <p class="mb-3">
-                                        <strong>Helper</strong> (just by calling the following function):
-                                    </p>
-                                    <pre class="pre-sh mb-0"><code class="pwrap javascript">One.helpers('one-print');</code></pre>
+                                    <pre class="pre-sh mb-0">
+<code class="pwrap javascript">function init(event) {
+    getChkState(); //read localStorage and set groups open/closed
+    checkTestField1(); //check conditions based on value of testField1 select
+}</code>
+</pre>
                                 </td>
                             </tr>
                         </tbody>
                         <tbody class="js-table-sections-header">
                             <tr>
-                                <td class="font-w600">Class Toggle</td>
+                                <td class="font-w600">validateForm</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>
                                     <p>
-                                        A helper which allows you to toggle a custom class on the element of your choice on
-                                        button click.
+                                        Function to validate form when Save button is clicked
                                     </p>
-                                    <p class="mb-3">
-                                        <strong>Helper</strong>:
-                                    </p>
-                                    <p class="mb-3">
-                                        This helper is already called by default on page load. You only must call it again if
-                                        you inject new
-                                        markup to the page and would like to init the functionality on it.
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap javascript">One.helpers(&apos;one-toggle-class&apos;);</code></pre>
-                                    <p class="mb-3">
-                                        <strong>Usage</strong>:
-                                    </p>
-                                    <p class="mb-3">
-                                        Your target element
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;div class=&quot;js-target-class&quot;&gt;&lt;/div&gt;</code></pre>
-                                    <p class="mb-3">
-                                        Your button
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;button type=&quot;button&quot; data-toggle=&quot;class-toggle&quot; data-target=&quot;.js-target-class&quot; data-class=&quot;your-class&quot;&gt;
-    Toggle
-&lt;/button&gt;</code></pre>
-                                    <p class="mb-0">
-                                        <em>
-                                            In this specific example, each button click will toggle the class 'your-class' on
-                                            the element
-                                            with class 'js-target-class'.
-                                        </em>
-                                    </p>
+                                    <pre class="pre-sh">
+<code class="pwrap javascript">function validateForm(e) {
+    e.preventDefault();
+
+    let elementsRequired = document.forms["form1"].querySelectorAll("[required]");
+    let isOk = true;
+
+    //check requirements elements
+    for (let i = 0; i < elementsRequired.length; i++) {
+        const element = elementsRequired[i];
+        if (element.value == "") {
+            isOk = false;
+            // here is called sweetalert with error message
+            Swal.fire({
+                ...
+            })
+             element.classList.add("invalid");
+        }
+        else {
+            element.classList.remove("invalid");
+        }
+    }
+
+    //form is valid
+    if (isOk) {
+        // here is called sweetalert with success message
+        Swal.fire({
+           ...
+        }).then(() => {
+            form.reset(); //clear form
+            })
+        }
+        return false;
+    }</code>
+</pre>
                                 </td>
                             </tr>
                         </tbody>
                         <tbody class="js-table-sections-header">
                             <tr>
-                                <td class="font-w600">Ripple</td>
+                                <td class="font-w600">getChkState</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>
                                     <p>
-                                        A helper which animates a ripple on button click.
+                                        Function to chechk in localStorage all the keys name start with <b>check_</b>. For keys that have value <b>true</b>, set attribute checked on checkbox elements that have same id like localstorage key name.
                                     </p>
-                                    <p class="mb-3">
-                                        <strong>Helper</strong>:
-                                    </p>
-                                    <p class="mb-3">
-                                        This helper is already called by default on page load. You only must call it again if
-                                        you inject new
-                                        markup to the page and would like to init the functionality on it.
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap javascript">One.helpers(&apos;one-ripple&apos;);</code></pre>
-                                    <p class="mb-3">
-                                        <strong>Usage</strong> (add data-* attributes to a button):
-                                    </p>
-                                    <pre class="pre-sh mb-0"><code class="pwrap html">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;click-ripple&quot;&gt;Primary&lt;/button&gt;</code></pre>
+                                    <pre class="pre-sh">
+<code class="pwrap javascript">function getChkState() {
+    for (let key in window.localStorage)
+        if (key.indexOf('check_') == 0) {
+            document.getElementById(key).checked = window.localStorage.getItem(key) == 'true';
+        }
+}
+</code>
+</pre>
                                 </td>
                             </tr>
                         </tbody>
                         <tbody class="js-table-sections-header">
                             <tr>
-                                <td class="font-w600">Table Sections</td>
+                                <td class="font-w600">setChkState</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>
                                     <p>
-                                        A helper which allows you to create table sections that toggle on row click (like an
-                                        accordion
-                                        component).
+                                        Function to set a key in localstorage for every group that is collapsed or expanded to save the state.
                                     </p>
-                                    <p class="mb-3">
-                                        <strong>Helper</strong> (call it after all JS scripts are added):
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;script&gt;One.helpersOnLoad(&apos;one-table-tools-sections&apos;);&lt;/script&gt;</code></pre>
-                                    <p class="mb-3">
-                                        <strong>Usage</strong>:
-                                    </p>
-                                    <p class="mb-3">
-                                        1. Add the class <code>js-table-sections</code> to your table
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;table class=&quot;js-table-sections table table-hover&quot;&gt;
-  ...
-&lt;/table&gt;</code></pre>
-                                    <p class="mb-3">
-                                        2. Use the following markup in your table to create clickable header rows and their
-                                        content
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">...
-&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
-&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
-&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
-&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
-&lt;tbody class=&quot;js-table-sections-header&quot;&gt;One row&lt;/tbody&gt;
-&lt;tbody&gt;Multiple rows which show/hide on previous tbody’s row click&lt;/tbody&gt;
-...
-</code></pre>
-                                    <p class="mb-0">
-                                        <em>Please check out Helpers page under Tables for usage examples.</em>
-                                    </p>
+                                    <pre class="pre-sh">
+<code class="pwrap javascript">function setChkState(id) {
+    let checkbox = document.getElementById(id)
+    window.localStorage.setItem(id, checkbox.checked);
+}
+</code>
+                                    </pre>
                                 </td>
                             </tr>
                         </tbody>
                         <tbody class="js-table-sections-header">
                             <tr>
-                                <td class="font-w600">Checkable Table</td>
+                                <td class="font-w600">checkNumber</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>
                                     <p>
-                                        A helper which allows you to create a table with checkable rows.
+                                        Function that is called onkeyup (when the user releases a key) to check if input[type="text"] with name <b>number</b> has value <b>Test</b>.
                                     </p>
-                                    <p class="mb-3">
-                                        <strong>Helper</strong> (call it after all JS scripts are added):
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;script&gt;One.helpersOnLoad(&apos;one-table-tools-checkable&apos;);&lt;/script&gt;</code></pre>
-                                    <p class="mb-3">
-                                        <strong>Usage</strong>:
-                                    </p>
-                                    <p class="mb-3">
-                                        1. Add the class <code>js-table-checkable</code> to your table
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">&lt;table class=&quot;js-table-checkable table table-hover&quot;&gt;
-  ...
-&lt;/table&gt;</code></pre>
-                                    <p class="mb-3">
-                                        2. Use similar markup in your table to create checkable rows
-                                    </p>
-                                    <pre class="pre-sh"><code class="pwrap html">...
-&lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th&gt;
-      &lt;input type=&quot;checkbox&quot; id=&quot;check-all&quot; name=&quot;check-all&quot;&gt;
-    &lt;/th&gt;
-    &lt;th&gt;Name&lt;/th&gt;
-  &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;input type=&quot;checkbox&quot; id=&quot;row_1&quot; name=&quot;row_1&quot;&gt;
-    &lt;/td&gt;
-    &lt;td&gt;Name 2&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;input type=&quot;checkbox&quot; id=&quot;row_2&quot; name=&quot;row_2&quot;&gt;
-    &lt;/td&gt;
-    &lt;td&gt;Name 2&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-...
-</code></pre>
-                                    <p class="mb-0">
-                                        <em>Please check out Helpers page under Tables for usage examples.</em>
-                                    </p>
+                                    <p>If condition is met, background color of input with name <b>testField8</b> is changed to rgb(169,169,169).</p>
+                                    <pre class="pre-sh">
+<code class="pwrap javascript">function checkNumber() {
+    if (form["number"].value == 'Test') {
+        form["testField8"].style.backgroundColor = 'rgba(169,169,169)';
+    }
+    else {
+        //reset initial background
+        form["testField8"].style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+    }
+}</code>
+                                    </pre>
                                 </td>
                             </tr>
                         </tbody>
+                        <tbody class="js-table-sections-header">
+                            <tr>
+                                <td class="font-w600">downloadImage</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <strong>Asynchronous</strong> function to download image when button with id <strong>downloadImage</strong> is clicked.
+                                    </p>
+                                    <pre class="pre-sh">
+<code class="pwrap javascript">const downloadBtn = document.getElementById('downloadImage'); //get button id and put it in a constant
+const imageUrl = document.getElementsByClassName('img2Down')[0].getElementsByTagName('img')[0].currentSrc; //get image source and put it in a constant
+
+// event listener for button. when it is clicked, call function downloaImage with image url passed as argument
+downloadBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    downloadImage(imageUrl);
+})
+
+// async function to download image
+async function downloadImage(imageUrl) {
+    fetch(imageUrl, {
+        mode: 'no-cors',
+    })
+        .then(response => response.blob())
+        .then(blob => {
+            let blobUrl = window.URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.download = imageUrl.replace(/^.*[\\\/]/, '');
+            a.href = blobUrl;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        })
+}
+</code>
+                                    </pre>
+                                </td>
+                            </tr>
+                        </tbody>
+
+
                     </table>
-                </div>
-                <div class="alert alert-info push">
-                    <p>
-                        You can run multiple helpers in a page by using an array:<br><code>
-                            One.helpers(['helper1',
-                            'helper2', 'helper3']);
-                        </code>
-                    </p>
-                    <p class="mb-0">
-                        Alternatively, you can also use helpersOnLoad function to run them once DOM Content is
-                        loaded:<br><code>One.helpersOnLoad(['helper1', 'helper2', 'helper3']);</code>
-                    </p>
-                </div>
-                <div class="alert alert-info push">
-                    <p class="mb-0">
-                        Feel free to ignore the provided helpers and use your own plugin inits after you’ve included the
-                        resources
-                        of the ones you need in your page.
-                    </p>
-                </div>
-                <div class="alert alert-warning push">
-                    <p class="mb-0">
-                        When a helper is called and functionality/plugin is initialized, a class <code>js-HELPER_NAME-enabled</code>
-                        is auto added to the element. This ensures that if you add a similar element dynamically to your
-                        page and
-                        call the helper again, the functionality/plugin will be initialized only on the new element. It’s a
-                        nice
-                        convenient solution but please have in mind that if you copy-paste an element to your markup from
-                        your
-                        browser’s developer tools, then you will also copy this extra class, so remember to remove it!
-                    </p>
                 </div>
                 <!-- END JavaScript -->
                 <!-- Quick Tips -->

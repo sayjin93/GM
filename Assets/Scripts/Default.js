@@ -15,10 +15,9 @@ function validateForm(e) {
     e.preventDefault();
 
     let elementsRequired = document.forms["form1"].querySelectorAll("[required]");
-
-    //check requirements elements
     let isOk = true;
 
+    //check requirements elements
     for (let i = 0; i < elementsRequired.length; i++) {
         const element = elementsRequired[i];
         if (element.value == "") {
@@ -35,6 +34,7 @@ function validateForm(e) {
             element.classList.remove("invalid");
         }
     }
+
     //form is valid
     if (isOk) {
         Swal.fire({
@@ -44,6 +44,7 @@ function validateForm(e) {
             timer: 1500
         }).then(() => {
             form.reset();
+            //clear form
         })
     }
     return false;
@@ -103,7 +104,6 @@ function checkNumber() {
         form["testField8"].style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     }
 }
-
 
 // Download image on button click
 const downloadBtn = document.getElementById('downloadImage');
