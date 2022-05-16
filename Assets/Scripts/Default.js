@@ -180,6 +180,7 @@ function tabHasGroups(id) {
 // Creating tabs
 function createTabs() {
     let tabsElement = document.getElementById('tabs');
+    tabsElement.classList.add("tabs" + data.tabs.length);
     data.tabs.forEach((element, index) => {
         tabsElement.innerHTML +=
             `
@@ -197,7 +198,7 @@ function createGroups(tabId) {
     let groupsHtml = "";
     data.groups.forEach((element, index) => {
         if (element.groupTab == tabId) {
-            groupsHtml += `<div class="accordion">;
+            groupsHtml += `<div class="accordion">
                                 <input type="checkbox" name="check_${element.id}" id="check_${element.id}" onclick="setChkState('check_${element.id}')" ${(index == 0 ? "checked" : "")}/>
                                 <label class="accordion-label" for="check_${element.id}"><i class="fa-solid ${element.icon}"></i> ${element.groupName}</label>
                                 <div class="accordion-content">${insertForm(element.id)}</div>
