@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class _Default : System.Web.UI.Page
+public partial class UserControls_Tabs : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //testField6.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
     }
 }

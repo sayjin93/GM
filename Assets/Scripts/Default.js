@@ -1,4 +1,31 @@
-﻿// Run function when DOM Content has loaded
+﻿let data = {
+    "tabs": [
+        { "id": 1, "tabName": "Tab 1", "icon": "fa-table-columns", "hasGroupd": true },
+        { "id": 2, "tabName": "Tab 2", "icon": "fa-table-columns", "hasGroupd": false },
+        { "id": 3, "tabName": "Tab 3", "icon": "fa-table-columns", "hasGroupd": false },
+    ],
+    "groups": [
+        { "id": 1, "groupName": "Group 1", "icon": "fa-table-columns", "groupTab": 1 },
+        { "id": 2, "groupName": "Group 2", "icon": "fa-table-columns", "groupTab": 1 },
+        { "id": 3, "groupName": "Group 3", "icon": "fa-table-columns", "groupTab": 1 },
+    ],
+    "formElements": [
+        { "id": 1, "group": 1, "name": "revision", "label": "Revision", "type": "text", "required": true },
+        { "id": 2, "group": 1, "name": "description", "label": "description", "type": "text", "required": true },
+        { "id": 3, "group": 1, "name": "effectivity_begin", "label": "Effectivity Begin", "type": "text", "required": true },
+        { "id": 4, "group": 1, "name": "testField1", "label": "TestField 1", "type": "select", "required": true },
+        { "id": 5, "group": 1, "name": "testField2", "label": "TestField 2", "type": "text", "required": false },
+        { "id": 6, "group": 1, "name": "testField3", "label": "TestField 3", "type": "text", "required": false },
+        { "id": 7, "group": 1, "name": "number", "label": "Number", "type": "text", "required": false },
+    ]
+}
+
+Object.entries(data).forEach(entry => {
+    const [key, value] = entry;
+    console.log(key, value);
+});
+
+// Run function when DOM Content has loaded
 document.addEventListener('DOMContentLoaded', init);
 
 // Declare form
@@ -6,8 +33,9 @@ let form = document.forms["form1"];
 
 // Function to run when DOM Content has loaded
 function init(event) {
+    createTabs();
     getChkState();
-    checkTestField1();
+    //checkTestField1();
 }
 
 // Form validation
@@ -129,3 +157,57 @@ async function downloadImage(imageUrl) {
             a.remove();
         })
 }
+
+function createTabs() {
+    let tabsHtml = "";
+
+    data.tabs.forEach((element, index) => {
+        tabsHtml += "<div class='tab'>";
+        tabsHtml += "   <label for='tab-" + element.id + "'> <i class='fa-solid " + element.icon + "'></i>" + element.tabName + "</label>";
+        tabsHtml += "    <input id='tab-" + element.id + "' name='tabs' type='radio'" + (index == 0 ? 'checked' : '') + " />";
+        tabsHtml += "   <div>" + (element.hasGroupd ? createGroups(element.id) : insertForm(element.id)) + "</div>";
+        tabsHtml += "</div>";
+    });
+
+    document.getElementById("tabs").insertAdjacentHTML('beforeend', tabsHtml);
+}
+
+function createGroups(tabId) {
+    let groupsHtml = "";
+
+    data.groups.forEach((element, index) => {
+        if (element.groupTab == tabId) {
+            groupsHtml += "<div class='accordion'>";
+            groupsHtml += "   <input type='checkbox' name='check_" + element.id + "' id='check_" + element.id + "' onclick='setChkState(\"check_" + element.id + "\")'" + (index == 0 ? 'checked' : '') + " />";
+            groupsHtml += "   <label class='accordion-label' for='check_" + element.id + "'><i class='fa-solid " + element.icon + "'></i>" + element.groupName + "</label>";
+            groupsHtml += "   <div class='accordion-content'>" + insertForm(element.id) + "</div>";
+            groupsHtml += "</div>";
+        }
+    });
+
+    return groupsHtml;
+}
+
+function insertForm(groupId) {
+    let formHtml = "";
+
+    data.formElements.forEach((element) => {
+        if (element.group == groupId) {
+            formHtml += " <div class='form-group'>";
+            formHtml += "   <label for='" + element.name + "'>" + (element.required == true ? '<i class=\'fa-solid fa-asterisk\'></i>' : '') + (element.label).toUpperCase() + "</label>";
+
+            if (element.type == 'text') {
+                formHtml += "<input id='" + element.name + "' name='" + element.name + "' type='" + element.type + "' " + (element.required == true ? 'required' : '') + "/>";
+            }
+            else if (element.type == 'select') {
+                formHtml += "<select id='" + element.name + "' name='" + element.name + "' onchange='checkTestField1()' " + (element.required == true ? 'required' : '') + "></select>";
+            }
+
+            formHtml += "</div>";
+        }
+    });
+
+    return formHtml;
+
+    //return 'Forma e Tab' + tabId + (groupId ? '(Group ' + groupId + ')' : '');
+};
