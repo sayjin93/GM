@@ -149,12 +149,13 @@ const downloadBtn = document.getElementById('downloadImage');
 const imageUrl = document.getElementsByClassName('img2Down')[0].getElementsByTagName('img')[0].currentSrc;
 
 downloadBtn.addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault(); // preventig default action that belongs to the event
     downloadImage(imageUrl);
 })
 
 async function downloadImage(imageUrl) {
-    fetch(imageUrl, {
+    await fetch(imageUrl, {
+        // allowing cors in fetch request
         mode: 'no-cors',
     })
         .then(response => response.blob())
